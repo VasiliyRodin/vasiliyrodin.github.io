@@ -450,6 +450,7 @@ var resizePizzas = function(size) {
   }
 
   // Iterates through pizza elements on the page and changes their widths
+  // We calculate the window width and the element width only once saving us a lot of time.
   function changePizzaSizes(size) {
     var test = document.getElementsByClassName("randomPizzaContainer");
     var windowwidth = document.getElementById("randomPizzas").offsetWidth;
