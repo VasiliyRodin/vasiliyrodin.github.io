@@ -22,7 +22,17 @@
         font-weight: bold;
       }
     </style>
-    <link href="css/style.css" rel="stylesheet">
+    <script>
+              var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = 'style.css';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb);
+      else window.addEventListener('load', cb);
+    </script>
+    <!--<link href="css/style.css" rel="stylesheet"> -->
     <link href="css/print.css" rel="stylesheet" media="print">
 
     <script>
