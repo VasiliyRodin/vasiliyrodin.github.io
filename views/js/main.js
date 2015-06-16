@@ -475,9 +475,9 @@ window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
 // Moving the pizza Div allows me to only call the DOM once.
-var pizzasDiv = document.getElementById("randomPizzas");
+
 for (var i = 2; i < 100; i++) {
-  
+  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -514,8 +514,9 @@ function updatePositions() {
   var items = document.getElementsByClassName("mover");
   var scrollT = document.body.scrollTop / 1250;
   // Call phase once so that it isn't run every time.
-  var phase = Math.sin(scrollT + (i % 5));
+ 
   for (var i = 0; i < items.length; i++) {
+    var phase = Math.sin(scrollT + (i % 5));
     //console.log(phase, document.body.scrollTop / 1250);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
